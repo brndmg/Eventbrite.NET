@@ -8,7 +8,7 @@ namespace EventbriteNET.Entities
 {
     public class Event : EntityBase
     {
-        public int Id;
+        public long Id;
         public string Title;
         public string Description;
         public DateTime StartDateTime;
@@ -16,7 +16,7 @@ namespace EventbriteNET.Entities
         public DateTime Created;
         public DateTime Modified;
 
-        public Dictionary<int, Ticket> Tickets = new Dictionary<int, Ticket>();
+        public Dictionary<long, Ticket> Tickets = new Dictionary<long, Ticket>();
 
         private List<Attendee> attendees;
         public List<Attendee> Attendees
