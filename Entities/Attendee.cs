@@ -12,14 +12,14 @@ namespace EventbriteNET.Entities
     }
     public class Attendee : EntityBase
     {
-        public int Id;
-        public int EventId;
-        public int? TicketId;
+        public long Id;
+        public long EventId;
+        public long? TicketId;
         public int? Quantity;
         public string Currency;
         public float? AmountPaid;
         public string Barcode;
-        public int? OrderId;
+        public long? OrderId;
         public string OrderType;
         public DateTime? Created;
         public DateTime? Modified;

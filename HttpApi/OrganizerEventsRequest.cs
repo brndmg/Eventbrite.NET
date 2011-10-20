@@ -11,7 +11,7 @@ namespace EventbriteNET.HttpApi
     {
         const string PATH = "organizer_list_events";
 
-        public OrganizerEventsRequest(int organiserId, EventbriteContext context)
+        public OrganizerEventsRequest(long organiserId, EventbriteContext context)
             : base(PATH, context)
         {
             this.AddGet("id", organiserId.ToString());

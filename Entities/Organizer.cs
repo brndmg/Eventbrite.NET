@@ -8,8 +8,8 @@ namespace EventbriteNET.Entities
 {
     public class Organizer : EntityBase
     {
-        private int id;
-        public int Id
+        private long id;
+        public long Id
         {
             get
             {
