@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using EventbriteNET.Entities;
+﻿using EventbriteNET.Entities;
 using EventbriteNET.HttpApi;
 
 namespace EventbriteNET
@@ -13,12 +9,15 @@ namespace EventbriteNET
         public string UserKey;
         public string Host = "https://www.eventbrite.com/xml/";
 
+        private User _user;
+
         public EventbriteContext(string appKey, string userKey = null)
         {
             this.AppKey = appKey;
             if (userKey != null)
             {
                 this.UserKey = userKey;
+                _user = new User(this);
             }
         }
 
@@ -31,5 +30,15 @@ namespace EventbriteNET
         {
             return new EventRequest(id, this).GetResponse();
         }
+
+        public User User
+        {
+            get
+            {
+                return _user;
+            }
+
+        }
+
     }
 }

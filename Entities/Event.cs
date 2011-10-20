@@ -11,6 +11,7 @@ namespace EventbriteNET.Entities
         public long Id;
         public string Title;
         public string Description;
+        public string Status;
         public DateTime StartDateTime;
         public DateTime EndDateTime;
         public DateTime Created;
@@ -33,5 +34,7 @@ namespace EventbriteNET.Entities
         }
 
         public Event(EventbriteContext context) : base(context) { }
+
+        public string Url { get; set; }
     }
 }
