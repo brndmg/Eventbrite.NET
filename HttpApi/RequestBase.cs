@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Configuration;
 using System.Net;
-using System.Runtime.Serialization;
-using System.Xml;
 using System.IO;
 
 namespace EventbriteNET.HttpApi
@@ -75,8 +70,13 @@ namespace EventbriteNET.HttpApi
 
         public string GetResponse()
         {
-            var client = new WebClient();
-            return client.DownloadString(this.Url);
+            HttpWebRequest request = (HttpWebRequest)
+            WebRequest.Create(this.Url);
+            HttpWebResponse response = (HttpWebResponse)
+            request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader sr = new StreamReader(stream);
+            return sr.ReadToEnd();
         }
 
     }

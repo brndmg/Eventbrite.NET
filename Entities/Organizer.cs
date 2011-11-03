@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using EventbriteNET.HttpApi;
 
 namespace EventbriteNET.Entities
@@ -35,7 +32,7 @@ namespace EventbriteNET.Entities
             }
         }
 
-        public Organizer(int id, EventbriteContext context) : base(context)
+        public Organizer(long id, EventbriteContext context) : base(context)
         {
             this.id = id;
         }
