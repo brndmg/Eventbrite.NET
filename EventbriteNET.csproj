@@ -48,6 +48,7 @@
     <Compile Include="Entities\Organizer.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Venue.cs" />
     <Compile Include="EventbriteContext.cs" />
     <Compile Include="HttpApi\EventAttendeesRequest.cs" />
     <Compile Include="HttpApi\EventRequest.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Xml\OrganizerEventsBuilder.cs" />
     <Compile Include="Xml\TicketBuilder.cs" />
     <Compile Include="Xml\UserEventsBuilder.cs" />
+    <Compile Include="Xml\VenueBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

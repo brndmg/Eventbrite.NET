@@ -10,6 +10,6 @@ Requests are made to Eventbrite's API via HTTP GET calls, using an API key suppl
 The XML documents that Eventbrite returns are then parsed into coherant classes. 
 The project utilises lazy-loading, ensuring there is minimal overhead for simple requests.
 
-## Gettting Started
+## Getting Started
 
 Refer to the [project homepage](http://penguinboy.github.com/Eventbrite.NET) for more detailed usage information.

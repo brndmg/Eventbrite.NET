@@ -14,8 +14,10 @@ namespace EventbriteNET.Entities
         public string Status;
         public DateTime StartDateTime;
         public DateTime EndDateTime;
+        public string Timezone;
         public DateTime Created;
         public DateTime Modified;
+        public Venue Venue { get; set; }
 
         public Dictionary<long, Ticket> Tickets = new Dictionary<long, Ticket>();
 
