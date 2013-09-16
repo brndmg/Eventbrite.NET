@@ -76,20 +76,19 @@ namespace EventbriteNET.Xml
 
 
             var barcodesNode = doc.GetElementsByTagName("barcodes");
-
-            if (barcodesNode.Count == 0)
-                return toReturn;
-
-            var barcodeNodes = barcodesNode[0].SelectNodes("//barcode");
-
-            var builder = new BarcodeBuilder(this.Context);
             var barcodes = new List<Barcode>();
-            if (barcodeNodes != null)
+
+            if (barcodesNode.Count > 0)
             {
-                foreach (XmlNode barcodeNode in barcodeNodes)
+                var barcodeNodes = barcodesNode[0].SelectNodes("//barcode");
+                var builder = new BarcodeBuilder(this.Context);
+                if (barcodeNodes != null)
                 {
-                    var barcode = builder.Build(barcodeNode.OuterXml);
-                    barcodes.Add(barcode);
+                    foreach (XmlNode barcodeNode in barcodeNodes)
+                    {
+                        var barcode = builder.Build(barcodeNode.OuterXml);
+                        barcodes.Add(barcode);
+                    }
                 }
             }
 

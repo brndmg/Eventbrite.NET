@@ -11,6 +11,8 @@ namespace EventbriteNET.HttpApi
             : base(PATH, context)
         {
             this.AddGet("id", eventId.ToString());
+            if (this.Context.ShowFullBarcodes)
+                this.AddGet("show_full_barcodes", "true");
         }
 
         public Attendee[] GetResponse()
