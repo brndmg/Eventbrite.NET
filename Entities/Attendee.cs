@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EventbriteNET.Entities
 {
@@ -16,7 +17,7 @@ namespace EventbriteNET.Entities
         public string Currency;
         public float? AmountPaid;
         public string Barcode;
-        public long? OrderId;
+        public int? OrderId;
         public string OrderType;
         public DateTime? Created;
         public DateTime? Modified;
@@ -59,6 +60,20 @@ namespace EventbriteNET.Entities
         public AttendeeGender? Gender;
         public DateTime? BirthDate;
         public int? Age;
+
+        private List<Barcode> _barcodes;
+        public List<Barcode> Barcodes
+        {
+            get
+            {
+                return _barcodes ?? new List<Barcode>();
+            }
+            set
+            {
+                if(_barcodes == null) _barcodes =new List<Barcode>();
+                _barcodes = value;
+            }
+        }
 
         public Attendee(EventbriteContext context) : base(context) { }
     }

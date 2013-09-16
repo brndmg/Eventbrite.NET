@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using EventbriteNET.Entities;
 using System.Xml;
 
@@ -72,6 +73,27 @@ namespace EventbriteNET.Xml
             {
                 toReturn.Gender = (AttendeeGender)Enum.Parse(typeof(AttendeeGender), gender);
             }
+
+
+            var barcodesNode = doc.GetElementsByTagName("barcodes");
+
+            if (barcodesNode.Count == 0)
+                return toReturn;
+
+            var barcodeNodes = barcodesNode[0].SelectNodes("//barcode");
+
+            var builder = new BarcodeBuilder(this.Context);
+            var barcodes = new List<Barcode>();
+            if (barcodeNodes != null)
+            {
+                foreach (XmlNode barcodeNode in barcodeNodes)
+                {
+                    var barcode = builder.Build(barcodeNode.OuterXml);
+                    barcodes.Add(barcode);
+                }
+            }
+
+            toReturn.Barcodes = barcodes;
 
             return toReturn;
         }
