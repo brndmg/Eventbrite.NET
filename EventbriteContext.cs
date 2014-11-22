@@ -11,8 +11,6 @@ namespace EventbriteNET
         public string UserKey;
         public string Host = "https://www.eventbrite.com/xml/";
 
-        public bool ShowFullBarcodes { get; set; }
-
         public EventbriteContext(string appKey, string userKey = null)
         {
             this.AppKey = appKey;
